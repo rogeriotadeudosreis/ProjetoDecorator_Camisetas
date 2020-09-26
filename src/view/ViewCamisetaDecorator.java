@@ -230,35 +230,46 @@ public class ViewCamisetaDecorator extends javax.swing.JFrame {
 
     private void jButtonIncluirNoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncluirNoCarrinhoActionPerformed
         try {
-            
+
+            boolean camisetaStandart = jCheckBoxStandart.isSelected();
+            boolean camisetaEstampada = jCheckBoxEstampada.isSelected();
+            boolean camisetaPersonalizada = jCheckBoxPersonalizada.isSelected();
+            boolean camisetaTematica = jCheckBoxTematica.isSelected();
+
             standart.setTipo("Standart");
             standart.setPreco(Double.parseDouble(jTextFieldValorStandart.getText()));
 
-            if (jCheckBoxStandart.isSelected()) {
+            if (camisetaStandart) {
                 jTextFieldValorStandart.requestFocus();
                 jTextAreaSaidaCamiseta.setText(standart + "");
-
             }
-            if (jCheckBoxEstampada.isSelected()) {
+            if (camisetaEstampada) {
                 estampada = new CamisetaEstampada(standart);
                 jTextAreaSaidaCamiseta.setText(estampada + "");
             }
-            if (jCheckBoxPersonalizada.isSelected()) {
+            if (camisetaPersonalizada) {
                 personalizada = new CamisetaPersonalizada(standart);
                 jTextAreaSaidaCamiseta.setText(personalizada + "");
             }
-            if (jCheckBoxTematica.isSelected()) {
+            if (camisetaTematica) {
                 tematica = new CamisetaTematica(standart);
                 jTextAreaSaidaCamiseta.setText(tematica + "");
             }
-            if (jCheckBoxStandart.isSelected() && jCheckBoxEstampada.isSelected()
-                    && jCheckBoxPersonalizada.isSelected()) {
+            if (camisetaStandart && camisetaEstampada && camisetaPersonalizada) {
                 personalizada = new CamisetaPersonalizada(new CamisetaEstampada(standart));
                 jTextAreaSaidaCamiseta.setText(personalizada + "");
             }
-            if (jCheckBoxStandart.isSelected() && jCheckBoxEstampada.isSelected()
-                    && jCheckBoxPersonalizada.isSelected() && jCheckBoxTematica.isSelected()) {
+            //Ver essa parte do código com prof. Eugênio, não está entrando nesta condição
+            if (camisetaStandart && camisetaEstampada && camisetaPersonalizada && camisetaTematica) {
                 tematica = new CamisetaTematica(new CamisetaPersonalizada(new CamisetaEstampada(standart)));
+                jTextAreaSaidaCamiseta.setText(tematica + "");
+            }
+            if (camisetaEstampada && camisetaTematica) {
+                tematica = new CamisetaTematica(new CamisetaEstampada(standart));
+                jTextAreaSaidaCamiseta.setText(tematica + "");
+            }
+            if (camisetaPersonalizada && camisetaTematica) {
+                tematica = new CamisetaTematica(new CamisetaPersonalizada(standart));
                 jTextAreaSaidaCamiseta.setText(tematica + "");
             }
 
@@ -271,7 +282,7 @@ public class ViewCamisetaDecorator extends javax.swing.JFrame {
         tematica = new CamisetaTematica(standart);
         if (jCheckBoxTematica.isSelected()) {
             jTextFieldValorTematica.setText(tematica.getPrecoTematico() + "");
-        }else {
+        } else {
             jTextFieldValorTematica.setText("");
         }
     }//GEN-LAST:event_jCheckBoxTematicaActionPerformed

@@ -1,7 +1,4 @@
 
-
-
-
 package decorator;
 
 import interface_prod.I_Camiseta;
