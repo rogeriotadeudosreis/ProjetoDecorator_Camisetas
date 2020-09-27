@@ -1,7 +1,7 @@
 
 package modelos_concretos;
 
-import interface_prod.I_Camiseta;
+import interface_camiseta.I_Camiseta;
 import decorator.DecoratorDeCamiseta;
 
 public class CamisetaPersonalizada extends DecoratorDeCamiseta{
@@ -33,10 +33,4 @@ public class CamisetaPersonalizada extends DecoratorDeCamiseta{
         return "Camiseta do Tipo: " + this.tipoDeCamiseta()
                 + "\nPreço Total R$: " + this.precoDaCamiseta();
     }
-    
-    
-    
-    
-    
-    
 }

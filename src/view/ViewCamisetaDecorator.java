@@ -26,8 +26,8 @@ public class ViewCamisetaDecorator extends javax.swing.JFrame {
      * Creates new form ViewCamisetaDecorator
      */
     public ViewCamisetaDecorator() {
-        standart = new CamisetaStandart();
 
+        standart = new CamisetaStandart();
         initComponents();
         jCheckBoxStandart.isSelected();
     }
@@ -230,7 +230,6 @@ public class ViewCamisetaDecorator extends javax.swing.JFrame {
 
     private void jButtonIncluirNoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIncluirNoCarrinhoActionPerformed
         try {
-
             boolean camisetaStandart = jCheckBoxStandart.isSelected();
             boolean camisetaEstampada = jCheckBoxEstampada.isSelected();
             boolean camisetaPersonalizada = jCheckBoxPersonalizada.isSelected();

@@ -1,7 +1,7 @@
 package modelos_concretos;
 
 import decorator.DecoratorDeCamiseta;
-import interface_prod.I_Camiseta;
+import interface_camiseta.I_Camiseta;
 
 public class CamisetaEstampada extends DecoratorDeCamiseta {
 
@@ -26,11 +26,10 @@ public class CamisetaEstampada extends DecoratorDeCamiseta {
     public double precoDaCamiseta() {
         return this.produto.precoDaCamiseta() + this.getPrecoEstampa();
     }
-
+    
     @Override
     public String toString() {
-        return "Camiseta do Tipo: " + this.tipoDeCamiseta()
-                + "\nPreço Total R$: " + this.precoDaCamiseta();
+        return "Camiseta Tipo: " + this.tipoDeCamiseta() + ""
+                + "\nPreco R$: " + this.precoDaCamiseta();
     }
-
 }

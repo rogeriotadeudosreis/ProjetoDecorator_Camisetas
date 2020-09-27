@@ -4,7 +4,7 @@ herdando seus métodos getNome() e getPreco()
  */
 package modelos_concretos;
 
-import interface_prod.I_Camiseta;
+import interface_camiseta.I_Camiseta;
 
 public class CamisetaStandart implements I_Camiseta {
 

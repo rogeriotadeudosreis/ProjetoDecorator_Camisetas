@@ -1,7 +1,7 @@
 
 package decorator;
 
-import interface_prod.I_Camiseta;
+import interface_camiseta.I_Camiseta;
 
 public class DecoratorDeCamiseta implements I_Camiseta {
     
